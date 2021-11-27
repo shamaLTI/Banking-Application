@@ -1,0 +1,67 @@
+<app-header></app-header>
+<!-- <form #form="ngForm" (ngSubmit)="Logout(form)">
+
+    <button type="submit" >LOGOUT</button>
+
+</form> -->
+<!-- //////////////////////// -->
+<div id="admin-login">
+    <div class="login-details">
+      <div class="row">
+        <div class="col-md-12">
+          <i class="fas fa-user center login-icon" *ngFor="let item of sum"> Welcome, {{item.Fname + " " + item.Lname}}</i>
+          <hr class="my-4 horizontal">
+          <div class="row">
+            <div class="col-md-4">
+              <a routerLink="/accountdetails"><button class="btn btn-primary" type="button" name="button">My Profile</button></a>
+            </div>
+            <div class="col-md-4">
+              <a routerLink="/accountsummary"><button class="btn btn-primary" type="button" name="">Account Summary</button></a>
+            </div>
+            <div class="col-md-4">
+              <a routerLink="/accountstatement"><button class="btn btn-primary" type="button" name="">Account Statement</button></a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <a routerLink="/transaction"><button class="btn btn-primary" type="button" name="">Fund Transfer</button></a>
+            </div>
+            <div class="col-md-4">
+              <a routerLink="/beneficiary"><button class="btn btn-primary" type="button" name="">Add Beneficiaries</button></a>
+            </div>
+            <div class="col-md-4">
+              <a routerLink="/resetbyaccount"><button class="btn btn-primary" type="button" name="">Change Password</button></a>
+            </div>
+            
+            <div class="logout">
+                <form #form="ngForm" (ngSubmit)="Logout(form)">
+
+                    <button type="submit" name="button" style="width:5rem; height:3rem; border-radius:10%;">Logout</button>
+                
+                </form>
+            </div><p class="logtime" *ngFor="let item of sum" style="color:#6e2945" ><b>Last Logged in : {{item.Session_Login| date: 'dd/MM/YYYY  hh:mm a'}}</b></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <div id="contactUs">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="header2">Get in touch with us now!</h2>
+      </div>
+      <div class="col-md-6">
+        <a href="https://twitter.com/lti_global?lang=en"><i class="fab social-icon fa-twitter fa-2x"></i></a>
+        <a href="https://www.facebook.com/LarsenToubroInfotech/"><i class="fab social-icon fa-facebook-f fa-2x" style="color: darkblue;"></i></a>
+        <a href="https://www.instagram.com/lti_global/?hl=en"><i class="fab social-icon fa-instagram fa-2x instagram"></i></a>
+        <a href="mailto: Abhishek.Jain@lntinfotech.com"><i class="fas social-icon fa-envelope fa-2x" style="color:white;"></i></a>
+        <a href="https://www.youtube.com/channel/UCr4-_QrHa_CCN872Cgi4D3Q"><i class="fab social-icon fa-youtube fa-2x" style="color:red;"></i></a>
+        <a href="https://www.linkedin.com/company/l&t-infotech/?originalSubdomain=in"><i class="fab social-icon fa-linkedin-in fa-2x"></i></a>
+        <p>© 2021 Fintech Group of Companies. Terms and Conditions applied.</p>
+      </div>
+    </div>
+  </div>

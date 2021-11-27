@@ -1,0 +1,33 @@
+<!-- <p>track works!</p>
+
+<form #form="ngForm" (ngSubmit)=TrackStatus(form)>
+   Track <input type="text" name="track" [(ngModel)]="model.track" #track="ngModel">
+   <button type="submit">Track</button>
+
+</form> -->
+<app-header></app-header>
+<div id="admin-login">
+   <div class="login-details">
+     <div class="row">
+       <div class="col-md-12">
+         <i class="fas fa-search login-icon"> Track Application Status</i>
+         <hr class="my-4 horizontal">
+         <form name="form" #formt="ngForm" (ngSubmit)="formt.form.valid && TrackStatus(formt)">
+           <div class="form-group">
+             <label for="email">Reference ID</label>
+             <!-- <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" [(ngModel)]="email.email" #email="ngModel" placeholder="Enter email" required autofocus> -->
+             <input type="text" name="track" class="form-control" [(ngModel)]="model.track" #track="ngModel" placeholder="Enter Reference Id" required>
+             <span *ngIf="formt.submitted && track.invalid">
+               <span style="color:red;" *ngIf="track.errors?.required">Field cannot be blank</span>
+             </span>
+             <small id="emailHelp" class="form-text text-muted">In case You do not have a Reference ID, Please Contact your Branch Manager.</small>
+            </div>
+             <button type="submit" class="btn btn-primary">Check Account Status</button>
+         </form>
+
+         </div>
+       </div>
+     </div>
+     </div>
+
+     <app-footer></app-footer>

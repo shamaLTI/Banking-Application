@@ -1,0 +1,93 @@
+<app-header></app-header>
+  
+   <div id="admin-login">
+    <div class="login-details">
+      <div class="row">
+        <div class="col-md-12">
+          <i class="fas fa-unlock login-icon"> Reset Password</i>
+          <hr class="my-4 horizontal">
+          <form name="form" #forgotPassword = "ngForm" (ngSubmit)="forgotPassword.form.valid && ForgotPass(forgotPassword)">
+              <table>
+                <tr>
+                  <div class="form-group">
+                    <td><label for="userid">Account Number</label></td>
+                  </div>
+                </tr>
+                <tr>
+                  <div class="form-group">
+                    <td class="field"><input type="text" class="form-control" name="userid" id="userid" aria-describedby="emailHelp" [(ngModel)]="admin.userid" #userid="ngModel" placeholder="Enter Account Number" required autofocus></td>
+                  </div>
+                </tr>
+                <span *ngIf="forgotPassword.submitted && userid.invalid">
+                  <span class="validation" *ngIf="userid.errors?.required">Field cannot be blank</span>
+                </span>
+                <tr>
+                  <div class="form-group">
+                    <td><label for="loginPassword">Login Password</label></td>
+                  </div>
+                </tr>
+                <tr>
+                  <div class="form-group">
+                    <td class="field"><input type="password" onclick="check()" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%?&])[A-Za-z0-9@$!%?&]{6,}"
+                      class="form-control" name="loginPassword" id="loginPassword" [(ngModel)]="admin.loginPassword" #loginPassword="ngModel" placeholder="Enter Login Password" required></td>
+                  </div>
+                </tr>
+                <span *ngIf="forgotPassword.submitted && loginPassword.invalid">
+                  <span class="validation" *ngIf="loginPassword.errors?.required">Field cannot be blank</span>
+                  <span class="validation" *ngIf="loginPassword.errors?.pattern">Invalid Password Format</span>
+                </span>
+                <tr>
+                  <div class="form-group">
+                    <td><label for="confirmLogin">Confirm Login Password</label></td>
+                  </div>
+                </tr>
+                <tr>
+                  <div class="form-group">
+                    <td class="field"><input type="password" class="form-control" name="confirmLogin" id="confirmLogin" [(ngModel)]="admin.confirmLogin" #confirmLogin="ngModel" placeholder="Confirm Login Password" required></td>
+                    <td><span id="message"></span></td>
+                  </div>
+                </tr>
+                <span *ngIf="forgotPassword.submitted && confirmLogin.invalid">
+                  <span class="validation" *ngIf="confirmLogin.errors?.required">Field cannot be blank</span>
+                </span>
+                <tr>
+                  <div class="form-group">
+                    <td><label for="transactPassword">Transaction Password</label></td>
+                  </div>
+                </tr>
+                <tr>
+                  <div class="form-group">
+                    <td class="field"><input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%?&])[A-Za-z0-9@$!%?&]{6,}"
+                     class="form-control" name="transactPassword" id="transactPassword" [(ngModel)]="admin.transactPassword" #transactPassword="ngModel" placeholder="Enter Transaction Password" required></td>
+                  </div>
+                </tr>
+                <span *ngIf="forgotPassword.submitted && transactPassword.invalid">
+                  <span class="validation" *ngIf="transactPassword.errors?.required">Field cannot be blank</span>
+                  <span class="validation" *ngIf="transactPassword.errors?.pattern">Invalid Password Format</span>
+                </span>
+                <tr>
+                  <div class="form-group">
+                    <td><label for="confirmTransact">Confirm Transaction Password</label></td>
+                  </div>
+                </tr>
+                <tr>
+                  <div class="form-group">
+                    <td class="field"><input type="password" class="form-control" name="confirmTransact" id="confirmTransact" [(ngModel)]="admin.confirmTransact" #confirmTransact="ngModel" placeholder="Confirm Transaction Password" required></td>
+                    <td><span id="message1"></span></td>
+                  </div>
+                </tr>
+                <span *ngIf="forgotPassword.submitted && confirmTransact.invalid">
+                  <span class="validation" *ngIf="confirmTransact.errors?.required">Field cannot be blank</span>
+                </span>
+              </table>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>   
+
+  
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../../../assets/validation.js"></script> 
+<app-footer></app-footer>

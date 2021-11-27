@@ -1,0 +1,115 @@
+/* Navigation Bar Section */
+#header {
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: linear-gradient(to bottom,#6e2945 100%, transparent);
+    z-index: 1000;
+    padding: 0 10%;
+  }
+  
+   
+  
+  #navigation-brand {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bolder;
+  }
+  
+   
+  
+  .nav-link {
+    color: #fff!important;
+    margin-right: 1rem!important;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+  
+   
+  
+  
+  /* Header 2 Class */
+  .header2 {
+    margin-top: 4%;
+    text-align: center;
+  }
+  
+   
+  
+  /* password reset section */
+  #admin-login {
+    padding-top:10%;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 15%;
+  }
+  
+   
+  
+  .login-icon {
+    width: 100%;
+    text-align: center;
+    color: #97144d;
+    letter-spacing: 1px;
+  }
+  
+   
+  
+  .horizontal {
+    background-color: #97144d;
+    height: 1.5px;
+  }
+  
+   
+  
+  button {
+    background-color: #97144d!important;
+    border: none!important;
+    color: white!important;
+  }
+  
+   
+  
+  /* Contact Us Section */
+  #contactUs {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 2% 10% 1%;
+    font-size: 1rem;
+  }
+  
+   
+  
+  .social-icon {
+    margin: 2%;
+  }
+  
+   
+  
+  .instagram {
+    display: inline-block;
+    text-align: center;
+    border-radius: 40px;
+    color: #fff;
+    vertical-align: middle;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+    margin-bottom: 4.5%;
+  }
+   @media print {
+      #contactUs {display:none}
+      #print{display:none}
+   }
+
+   
+/* #content, #content *{
+    visibility: visible;
+} */
+
+/* #content{
+    position: absolute;
+    top:100;
+    left:0;
+} */

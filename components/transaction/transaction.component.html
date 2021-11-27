@@ -1,0 +1,69 @@
+<app-header></app-header>
+<a routerLink="/userdashboard"><i class="fas fa-arrow-circle-left back-icon fa-2x"></i></a>
+
+  <div id="admin-login">
+    <div class="login-details">
+      <div class="row">
+        <div class="col-md-12">
+          <i class="fas fa-rupee-sign center login-icon"> Fund Transfer</i>
+          <hr class="my-4 horizontal">
+          <form name="form" #transferform="ngForm" (ngSubmit)="transferform.form.valid && Transfer(transferform)">
+            <div class="form-group">
+              <label for="accNo">Account Number</label>
+              <input type="text"  disabled class="form-control" name="accNo" id="accNo" aria-describedby="emailHelp" [(ngModel)]="model.accNo" #accNo="ngModel" placeholder="Enter Account Number" required autofocus>
+                <span *ngIf="transferform.submitted && accNo.invalid">
+                    <span class="validation" *ngIf="accNo.errors?.required">Field cannot be blank</span>
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="BenaccNo">Beneficiary Account Number</label>
+              <!-- <input type="text" class="form-control" name="BenaccNo" id="BenaccNo" aria-describedby="emailHelp" [(ngModel)]="model.BenaccNo" #BenaccNo="ngModel" placeholder="Enter Beneficiary Account Number" required> -->
+              <select class = "form-control" name="BenaccNo" [(ngModel)]="model.BenaccNo" #BenaccNo="ngModel" required>
+                <option *ngFor="let item of ben" value={{item.Ben_AccNo}}>{{item.Ben_Name}}</option>
+            </select>
+             
+             
+              <a routerLink="/beneficiary">Add a Beneficiary</a>
+                <span *ngIf="transferform.submitted && BenaccNo.invalid">
+                    <span class="validation" *ngIf="BenaccNo.errors?.required">Field cannot be blank</span>
+                </span>
+            </div>
+            <div class="form-group">
+              <label for="tranType">Transaction Type</label>
+              <select class="form-control" onClick = "currentDateTime()" name="tranType" [(ngModel)]="model.tranType" #tranType="ngModel" id="tranType" required>
+                <option value="" selected="selected" disabled="disabled">Select One</option>
+                <option value="IMPS">IMPS</option>
+                <option value="NEFT">NEFT</option>
+                <option value="RTGS">RTGS</option>
+              </select>
+              <span *ngIf="transferform.submitted && tranType.invalid">
+                  <span class="validation" *ngIf="tranType.errors?.required">Field cannot be blank</span>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="maturity">Maturity Date</label>
+              <input type="date" class="form-control" name="maturity" id="maturity" aria-describedby="emailHelp" [(ngModel)]="model.maturity" #maturity="ngModel">
+              
+            </div>
+            <div class="form-group">
+              <label for="remarks">Remarks</label>
+              <input type="text"  class="form-control" name="remarks" id="remarks" aria-describedby="emailHelp" [(ngModel)]="model.remarks" #remarks="ngModel" placeholder="Enter Remarks" >
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input type="number" onclick="check()" class="form-control" name="amount" id="amount" aria-describedby="emailHelp" [(ngModel)]="model.amount" #amount="ngModel" placeholder="Enter Amount" maxlength="6" required>
+              <span *ngIf="transferform.submitted && amount.invalid">
+                  <span class="validation" *ngIf="amount.errors?.required">Field cannot be blank &nbsp;</span>
+              </span>
+              <span class="message" id="message"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src = "../../../assets/external/maturity.js"></script>
+<app-footer></app-footer>
+
+
