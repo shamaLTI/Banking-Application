@@ -1,0 +1,70 @@
+
+<app-header></app-header>
+<a routerLink="/userdashboard"><i class="fas fa-arrow-circle-left back-icon fa-2x"></i></a>
+
+<div id="admin-login">
+    <div class="login-details">
+      <div class="row">
+        <div class="col-md-12">
+          <i class="fas fa-exchange-alt center login-icon"> Account Summary</i>
+          <hr class="my-4 horizontal">
+          <div class="row">
+            <div class="col-md-4">
+              <ul class="list-group list-group-flush" *ngFor="let item of sum">
+                <li class="list-group-item list-items"><h4><i class="fas fa-user"> {{item.Title +" "+ item.Fname + " " +item.Lname}}</i></h4></li>
+                <li class="list-group-item list-items"><h5><i class="fas fa-hashtag"> Account Number: {{item.Acc_No}}</i></h5></li>
+                <li class="list-group-item list-items"><h5><i class="fas fa-rupee-sign"> Balance: {{item.Balance}}</i></h5></li>
+                <li class="list-group-item list-items"><a routerLink="/accountstatement" style="color: #6e2945; text-decoration:none">View Detailed Statement</a></li>
+                <li class="list-group-item list-items"><a routerLink="/userdashboard" style="color:#6e2945; text-decoration:none;">Dashboard</a></li>
+              </ul>
+            </div>
+            <div class="col-md-8">
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Transaction ID</th>
+                    <th scope="col">To Account</th>
+                    <th scope="col">Transaction Type</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Withdraw</th>
+                    <th scope="col">Deposit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of tran ">
+                    <th scope="row">{{item.TransactionID}}</th>
+                    <td>{{item.Ben_AccNo}}</td>
+                    <td>{{item.Transaction_Type}}</td>
+                    <td>{{item.Transaction_date | date:'dd/MM/YYYY hh:mm a'}}</td>
+                    <td style= "color: red; font-size: 15px;" ><i class="fas fa-rupee-sign" ></i> {{item.Withdraw}}</td>
+                    <td style= "color:green;"><i class="fas fa-rupee-sign" ></i> {{item.Deposit}}</td>
+
+
+                  </tr>
+                </tbody> 
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <div id="contactUs">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="header2">Get in touch with us now!</h2>
+      </div>
+      <div class="col-md-6">
+        <a href="https://twitter.com/lti_global?lang=en"><i class="fab social-icon fa-twitter fa-2x"></i></a>
+        <a href="https://www.facebook.com/LarsenToubroInfotech/"><i class="fab social-icon fa-facebook-f fa-2x" style="color: darkblue;"></i></a>
+        <a href="https://www.instagram.com/lti_global/?hl=en"><i class="fab social-icon fa-instagram fa-2x instagram"></i></a>
+        <a href="mailto: Abhishek.Jain@lntinfotech.com"><i class="fas social-icon fa-envelope fa-2x" style="color:white;"></i></a>
+        <a href="https://www.youtube.com/channel/UCr4-_QrHa_CCN872Cgi4D3Q"><i class="fab social-icon fa-youtube fa-2x" style="color:red;"></i></a>
+        <a href="https://www.linkedin.com/company/l&t-infotech/?originalSubdomain=in"><i class="fab social-icon fa-linkedin-in fa-2x"></i></a>
+        <p>© 2021 Fintech Group of Companies. Terms and Conditions applied.</p>
+      </div>
+    </div>
+  </div>

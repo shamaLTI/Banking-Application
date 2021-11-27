@@ -1,0 +1,100 @@
+#header {
+    left: 0;
+    right: 0;
+    position: absolute;
+    /* background: linear-gradient(to bottom,#1a195d 20%, transparent); */
+    z-index: 1000;
+    padding: 0 10%;
+  }
+  
+  #navigation-brand {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bolder;
+  }
+  
+  .navbar-brand:hover {
+    color: red!important;
+  }
+  
+  .nav-link {
+    color: #fff!important;
+    margin-right: 1rem!important;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+  
+  .nav-link:hover {
+    color: red!important;
+  }
+  
+  /* Header 2 Class */
+  .header2 {
+    margin-top: 4%;
+    text-align: center;
+  }
+  
+  /* Slide Show Section */
+  .carouselImage {
+    position: relative;
+  }
+  
+  .bottom {
+    position: absolute;
+    top: 300px;
+    left: 800px;
+    color: #fff;
+    font-size: 3rem;
+    font-family: 'Monotype Corsiva', cursive;
+  }
+  
+  /* Message Section */
+  .messageList {
+    font-size: 1.2rem!important;
+    background-color: #be66af;
+    color: #fff;
+  }
+  
+  /* Main Function Section */
+  #mainFunctions {
+    padding-top: 2% ;
+    font-size: 1rem;
+    color: grey;
+  }
+
+  a:hover { text-decoration: none;}
+  
+  .horizontal {
+    width: 7%;
+    background-color: red;
+    height: 2px;
+  }
+  
+  /* Customer Slide Section */
+  .customerSlide {
+    width: 100%;
+    height: 500px;
+    position: relative;
+  }
+  
+  .center {
+  position: absolute;
+  top: 1150px;
+  color: #fff;
+  margin-left: 2%;
+  }
+  
+  .left-center {
+    position: absolute;
+    top: 1250px;
+    color: #fff;
+    margin-left: 2%;
+  }
+  
+  .left-bottom {
+    position: absolute;
+    top: 1350px;
+    left: 30px;
+    color: #fff;
+  }
+  

@@ -1,0 +1,143 @@
+/* Navigation Bar Section */
+#header {
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: linear-gradient(to bottom,#6e2945 100%, transparent);
+    z-index: 1000;
+    padding: 0 10%;
+  }
+  
+   
+  
+  #navigation-brand {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bolder;
+  }
+  
+   
+  
+  .nav-link {
+    color: #fff!important;
+    margin-right: 1rem!important;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+  
+   
+  
+  /* Header 2 Class */
+  .header2 {
+    margin-top: 4%;
+    text-align: center;
+  }
+  
+   
+  
+  /* Slide Show Section */
+  .carouselImage {
+    position: relative;
+    padding-top: 86px;
+  }
+  
+   
+  
+  /* Office Address Section */
+  #office-address {
+    padding: 4% 10% 2%;
+  }
+  
+   
+  
+  .office-title {
+    font-size: 2rem;
+  }
+  
+   
+  
+  .horizontal {
+    width: 7%;
+    background-color: red;
+    height: 2px;
+  }
+  
+   
+  
+  /* About Us Section */
+  #about-us {
+    background-color: lightgrey;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+   
+  
+  .facts {
+    padding-bottom: 1px;
+    text-align: center;
+  }
+  
+   
+  
+  .about-header {
+    padding-top: 1rem;
+    color: #5f1f39;
+  }
+  
+   
+  
+  .feature-box {
+    margin: 1rem auto;
+  }
+  
+   
+  
+  .feature-item {
+    margin: 2rem auto;
+  }
+  
+   
+  
+  .feature-icon {
+    color: #643445;
+  }
+  
+   
+  
+  .header {
+    color: red;
+    margin: 1rem auto;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+   
+  
+  /* Contact Us Section */
+  #contactUs {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 2% 10% 1%;
+    font-size: 1rem;
+  }
+  
+  
+
+  .social-icon {
+    margin: 2%;
+  }
+
+
+  .instagram {
+    display: inline-block;
+    text-align: center;
+    border-radius: 40px;
+    color: #fff;
+    vertical-align: middle;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+    margin-bottom: 4.5%;
+  }

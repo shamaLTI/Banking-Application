@@ -1,0 +1,534 @@
+<app-header></app-header>
+<div class="form-section">
+    <h1 class="header">Open a Savings Account</h1>
+    <div class="form">
+        <h2 class="header">Personal Details</h2>
+        <form name="form" #accountform = "ngForm" (ngSubmit) = "accountform.form.valid && RegisterData(accountform)">
+            <div class="details">
+                <table cellspacing = "20">
+                    <tr>
+                        <td><label for="title" class="header">Title<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <select name="title" [(ngModel)] = "customer.title" #title = "ngModel" id="title" required>
+                                <option value="" disabled>Select</option>
+                                <option value="Mr.">Mr.</option>
+                                <option value="Ms.">Ms.</option>
+                                <option value="Mrs.">Mrs.</option>
+                            </select>
+                        </td>
+                        <td></td><td></td>
+                        <span *ngIf="accountform.submitted && title.invalid">
+                            <span class="validation" *ngIf="title.errors?.required">Select a Title</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="fname" class="header">First Name<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="fname" [(ngModel)] = "customer.fname" #fname = "ngModel" id="fname" placeholder="Enter First Name" required>
+                        </td>
+                        <td></td><td></td>
+                        <span *ngIf="accountform.submitted && fname.invalid">
+                        <span class="validation" *ngIf="fname.errors?.required">First Name cannot be empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="mname" class="header">Middle Name</label></td>
+                        <td class="field">
+                            <input type="text" name="mname" [(ngModel)]="customer.mname" #mname = "ngModel" id="mname" placeholder="Enter Middle Name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="lname" class="header">Last Name<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="lname" [(ngModel)]="customer.lname" #lname = "ngModel" id="lname" placeholder="Enter Last Name" required>
+                        </td>
+                        <td></td><td></td>
+                        <span *ngIf="accountform.submitted && lname.invalid">
+                        <span class="validation" *ngIf="lname.errors?.required">Last Name cannot be empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="dname" class="header">Father's Name<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="dname" [(ngModel)]="customer.dname" #dname = "ngModel" id="dname" placeholder="Enter Father's Name" required>        
+                        </td>
+                        <td></td><td></td>
+                        <span *ngIf="accountform.submitted && dname.invalid">
+                        <span class="validation" *ngIf="dname.errors?.required">Field cannot be left empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="mobno" class="header">Mobile Number<span class="required-validation">*</span></label></td>    
+                        <td class="field">
+                            <input type="text" name="mobno" [(ngModel)]="customer.mobno" #mobno = "ngModel" id="mobno" placeholder="Enter Mobile Number" maxlength="10" pattern="^([0-9]{10})$" required>
+                        </td>
+                        <td></td><td></td>
+                        <span *ngIf="accountform.submitted && mobno.invalid">
+                        <span class="validation" *ngIf="mobno.errors?.required">Mobile Number cannot be Empty</span>
+                        <span class="validation" *ngIf="mobno.errors?.pattern">Mobile number should be of 10 digits</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="email" class="header">Email ID<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="email" name="email" [(ngModel)]="customer.email" #email = "ngModel" id="email" placeholder="Enter Email Address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"required>
+                        </td>
+                        <td></td><td></td>
+                        <td>
+                            <span *ngIf="accountform.submitted && email.invalid">
+                            <span class="validation" *ngIf="email.errors?.required">Email cannot be empty</span>
+                            <span class="validation" *ngIf="email.errors?.pattern">Enter a valid email address</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="aadhar" class="header">Aadhar Card Number<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="aadhar" [(ngModel)]="customer.aadhar" #aadhar = "ngModel" id="aadhar" placeholder="Enter Aadhar Card Number" maxlength="12" pattern="^([0-9]{12})$" required>
+                        </td>
+                        <td></td><td></td>
+                        <span *ngIf="accountform.submitted && aadhar.invalid">
+                        <span class="validation" *ngIf="aadhar.errors?.required">Field cannot be empty</span>
+                        <span class="validation" *ngIf="aadhar.errors?.pattern">Enter a valid aadhar number</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="dob" class="header">Date of Birth<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="date" name="dob" [(ngModel)]="customer.dob" #dob = "ngModel" id="dob" placeholder="Enter Date of Birth" required>
+                        </td>
+                        <td></td><td></td>
+                        <span *ngIf="accountform.submitted && dob.invalid">
+                        <span class="validation" *ngIf="dob.errors?.required">Field cannot be empty</span>
+                        </span>
+                    </tr>
+                </table>    
+            </div>
+            
+            <div class="address1">
+                <h3 class="header" style="margin-bottom:3%;">Residential Address</h3>
+                <table cellspacing = "20">
+                    <tr>
+                        <td><label for="address1" class="header">a) Address Line 1<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="address1" [(ngModel)]="customer.address1" #address1 = "ngModel" id="address1" placeholder="Enter Address Line 1" maxlength="32" required>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && address1.invalid">
+                        <span class="validation" *ngIf="address1.errors?.required">Field cannot be empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="address2" class="header">b) Address Line 2<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="address2" [(ngModel)]="customer.address2" #address2 = "ngModel" id="address2" placeholder="Enter Address line 2" maxlength="32" required>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && address2.invalid">
+                        <span class="validation" *ngIf="address2.errors?.required">Field cannot be empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="landmark" class="header">c) Landmark</label></td>
+                        <td class="field">
+                            <input type="text" name="landmark" [(ngModel)]="customer.landmark" #landmark = "ngModel" id="landmark" placeholder="Enter Landmark">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="state" class="header">d) State<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <select name="state" [(ngModel)]="customer.state" #state = "ngModel" id="state" required>
+                                <option value="" disabled>Select State</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Puducherry">Puducherry</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && state.invalid">
+                        <span class="validation" *ngIf="state.errors?.required">Select State</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="city" class="header">e) City<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="city" [(ngModel)]="customer.city" #city = "ngModel" id="city" placeholder="Enter City Name" required>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && city.invalid">
+                        <span class="validation" *ngIf="city.errors?.required">Field cannot be empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="pincode" class="header">f) Pincode<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="pincode" [(ngModel)]="customer.pincode" #pincode = "ngModel" id="pincode" placeholder="Enter Pincode" maxlength="6" pattern="^([0-9]{6})$" required>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && pincode.invalid">
+                        <span class="validation" *ngIf="pincode.errors?.required">Field cannot be empty</span>
+                        <span class="validation" *ngIf="pincode.errors?.pattern">Invalid Pincode</span>
+                        </span>
+                    </tr>
+                </table>
+            </div>
+            <!-- [5:06 PM] Shama Mohammad
+<input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+<em>Check this box if Billing Address and Mailing Address are the same.</em> -->
+
+
+            <div class="address2">
+                <h3 class="header" style="margin:3% 0">Permanent Address</h3>
+                <input type="checkbox" name="permaAddress" id="permaAddress" (change)="PermanentAddress($event)" value="checked"><label class="header" for="permaAddress" style="margin-left:1%; margin-bottom:1%;"> Permanent Address same as Mailing address</label>
+                <table cellspacing = "20">
+                    <tr>
+                        <td><label for="permaAddress1" class="header">a) Address Line 1<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="permaAddress1" [(ngModel)]="customer.permaAddress1" #permaAddress1 = "ngModel" id="permaAddress1" placeholder="Enter Address Line 1" maxlength="32" required>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && permaAddress1.invalid">
+                        <span class="validation" *ngIf="permaAddress1.errors?.required">Field cannot be empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="permaAddress2" class="header">b) Address Line 2<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="permaAddress2" [(ngModel)]="customer.permaAddress2" #permaAddress2 = "ngModel" id="permaAddress2" placeholder="Enter Address line 2" maxlength="32" required>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && permaAddress2.invalid">
+                        <span class="validation" *ngIf="permaAddress2.errors?.required">Field cannot be empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="permalandmark" class="header">c) Landmark</label></td>
+                        <td class="field">
+                            <input type="text" name="permalandmark" [(ngModel)]="customer.permalandmark" #permalandmark = "ngModel" id="permalandmark" placeholder="Enter Landmark">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="permastate" class="header">d) State<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <select name="permastate" [(ngModel)]="customer.permastate" #permastate = "ngModel" id="permastate" required>
+                                <option value="" selected="selected" disabled="disabled">-- select one --</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Puducherry">Puducherry</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && permastate.invalid">
+                        <span class="validation" *ngIf="permastate.errors?.required">Select State</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="permacity" class="header">e) City<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="permacity" [(ngModel)]="customer.permacity" #permacity = "ngModel" id="permacity" placeholder="Enter City Name" required>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && permacity.invalid">
+                        <span class="validation" *ngIf="permacity.errors?.required">Field cannot be empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="permapincode" class="header">f) Pincode<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="permapincode" [(ngModel)]="customer.permapincode" #permapincode = "ngModel" id="permapincode" placeholder="Enter Pincode" maxlength="6" pattern="^([0-9]{6})$" required>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && permapincode.invalid">
+                        <span class="validation" *ngIf="permapincode.errors?.required">Field cannot be empty</span>
+                        <span class="validation" *ngIf="permapincode.errors?.pattern">Invalid Pincode</span>
+                        </span>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="occupation">
+                <h3 class="header" style="margin:3% 0;">Occupation Details</h3>
+                <table cellspacing = "20">
+                    <tr>
+                        <td><label for="occType" class="header">a) Occupation Type<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <select id="occType" name="occType" [(ngModel)]="customer.occType" #occType = "ngModel" required>
+                                <option value="" selected="selected" disabled="disabled">-- Select one --</option>
+                                <optgroup label="Healthcare Practitioners and Technical Occupations:">
+                                    <option value="Chiropractor">-  Chiropractor</option>
+                                    <option value="Dentist">-  Dentist</option>
+                                    <option value="Dietitian or Nutritionist">-  Dietitian or Nutritionist</option>
+                                    <option value="Optometrist">-  Optometrist</option>
+                                    <option value="Pharmacist">-  Pharmacist</option>
+                                    <option value="Physician">-  Physician</option>
+                                    <option value="Physician Assistant">-  Physician Assistant</option>
+                                    <option value="Podiatrist">-  Podiatrist</option>
+                                    <option value="Registered Nurse">-  Registered Nurse</option>
+                                    <option value="Therapist">-  Therapist</option>
+                                    <option value="Veterinarian">-  Veterinarian</option>
+                                    <option value="Health Technologist or Technician">-  Health Technologist or Technician</option>
+                                    <option value="Other Healthcare Practitioners and Technical Occupation">-  Other Healthcare Practitioners and Technical Occupation</option>
+                                </optgroup>
+                                <optgroup label="Healthcare Support Occupations:">
+                                    <option value="Nursing, Psychiatric, or Home Health Aide">-  Nursing, Psychiatric, or Home Health Aide</option>
+                                    <option value="Occupational and Physical Therapist Assistant or Aide">-  Occupational and Physical Therapist Assistant or Aide</option>
+                                    <option value="Other Healthcare Support Occupation">-  Other Healthcare Support Occupation</option>
+                                </optgroup>
+                                <optgroup label="Business, Executive, Management, and Financial Occupations:">
+                                    <option value="Chief Executive">-  Chief Executive</option>
+                                    <option value="General and Operations Manager">-  General and Operations Manager</option>
+                                    <option value="Advertising, Marketing, Promotions, Public Relations, and Sales Manager">-  Advertising, Marketing, Promotions, Public Relations, and Sales Manager</option>
+                                    <option value="Operations Specialties Manager (e.g., IT or HR Manager)">-  Operations Specialties Manager (e.g., IT or HR Manager)</option>
+                                    <option value="Construction Manager">-  Construction Manager</option>
+                                    <option value="Engineering Manager">-  Engineering Manager</option>
+                                    <option value="Accountant, Auditor">-  Accountant, Auditor</option>
+                                    <option value="Business Operations or Financial Specialist">-  Business Operations or Financial Specialist</option>
+                                    <option value="Business Owner">-  Business Owner</option>
+                                    <option value="Other Business, Executive, Management, Financial Occupation">-  Other Business, Executive, Management, Financial Occupation</option>
+                                </optgroup>
+                                <optgroup label="Architecture and Engineering Occupations:">
+                                    <option value="Architect, Surveyor, or Cartographer">-  Architect, Surveyor, or Cartographer</option>
+                                    <option value="Engineer">-  Engineer</option>
+                                    <option value="Other Architecture and Engineering Occupation">-  Other Architecture and Engineering Occupation</option>
+                                </optgroup>
+                                <optgroup label="Education, Training, and Library Occupations:">
+                                    <option value="Postsecondary Teacher (e.g., College Professor)">-  Postsecondary Teacher (e.g., College Professor)</option>
+                                    <option value="Primary, Secondary, or Special Education School Teacher">-  Primary, Secondary, or Special Education School Teacher</option>
+                                    <option value="Other Teacher or Instructor">-  Other Teacher or Instructor</option>
+                                    <option value="Other Education, Training, and Library Occupation">-  Other Education, Training, and Library Occupation</option>
+                                </optgroup>
+                                <optgroup label="Other Professional Occupations:">
+                                    <option value="Arts, Design, Entertainment, Sports, and Media Occupations">-  Arts, Design, Entertainment, Sports, and Media Occupations</option>
+                                    <option value="Computer Specialist, Mathematical Science">-  Computer Specialist, Mathematical Science</option>
+                                    <option value="Counselor, Social Worker, or Other Community and Social Service Specialist">-  Counselor, Social Worker, or Other Community and Social Service Specialist</option>
+                                    <option value="Lawyer, Judge">-  Lawyer, Judge</option>
+                                    <option value="Life Scientist (e.g., Animal, Food, Soil, or Biological Scientist, Zoologist)">-  Life Scientist (e.g., Animal, Food, Soil, or Biological Scientist, Zoologist)</option>
+                                    <option value="Physical Scientist (e.g., Astronomer, Physicist, Chemist, Hydrologist)">-  Physical Scientist (e.g., Astronomer, Physicist, Chemist, Hydrologist)</option>
+                                    <option value="Religious Worker (e.g., Clergy, Director of Religious Activities or Education)">-  Religious Worker (e.g., Clergy, Director of Religious Activities or Education)</option>
+                                    <option value="Social Scientist and Related Worker">-  Social Scientist and Related Worker</option>
+                                    <option value="Other Professional Occupation">-  Other Professional Occupation</option>
+                                </optgroup>
+                                <optgroup label="Office and Administrative Support Occupations:">
+                                    <option value="Supervisor of Administrative Support Workers">-  Supervisor of Administrative Support Workers</option>
+                                    <option value="Financial Clerk">-  Financial Clerk</option>
+                                    <option value="Secretary or Administrative Assistant">-  Secretary or Administrative Assistant</option>
+                                    <option value="Material Recording, Scheduling, and Dispatching Worker">-  Material Recording, Scheduling, and Dispatching Worker</option>
+                                    <option value="Other Office and Administrative Support Occupation">-  Other Office and Administrative Support Occupation</option>
+                                </optgroup>
+                                <optgroup label="Services Occupations:">
+                                    <option value="Protective Service (e.g., Fire Fighting, Police Officer, Correctional Officer)">-  Protective Service (e.g., Fire Fighting, Police Officer, Correctional Officer)</option>
+                                    <option value="Chef or Head Cook">-  Chef or Head Cook</option>
+                                    <option value="Cook or Food Preparation Worker">-  Cook or Food Preparation Worker</option>
+                                    <option value="Food and Beverage Serving Worker (e.g., Bartender, Waiter, Waitress)">-  Food and Beverage Serving Worker (e.g., Bartender, Waiter, Waitress)</option>
+                                    <option value="Building and Grounds Cleaning and Maintenance">-  Building and Grounds Cleaning and Maintenance</option>
+                                    <option value="Personal Care and Service (e.g., Hairdresser, Flight Attendant, Concierge)">-  Personal Care and Service (e.g., Hairdresser, Flight Attendant, Concierge)</option>
+                                    <option value="Sales Supervisor, Retail Sales">-  Sales Supervisor, Retail Sales</option>
+                                    <option value="Retail Sales Worker">-  Retail Sales Worker</option>
+                                    <option value="Insurance Sales Agent">-  Insurance Sales Agent</option>
+                                    <option value="Sales Representative">-  Sales Representative</option>
+                                    <option value="Real Estate Sales Agent">-  Real Estate Sales Agent</option>
+                                    <option value="Other Services Occupation">-  Other Services Occupation</option>
+                                </optgroup>
+                                <optgroup label="Agriculture, Maintenance, Repair, and Skilled Crafts Occupations:">
+                                    <option value="60">-  Construction and Extraction (e.g., Construction Laborer, Electrician)</option>
+                                    <option value="Farming, Fishing, and Forestry">-  Farming, Fishing, and Forestry</option>
+                                    <option value="Installation, Maintenance, and Repair">-  Installation, Maintenance, and Repair</option>
+                                    <option value="Production Occupations">-  Production Occupations</option>
+                                    <option value="Other Agriculture, Maintenance, Repair, and Skilled Crafts Occupation">-  Other Agriculture, Maintenance, Repair, and Skilled Crafts Occupation</option>
+                                </optgroup>
+                                <optgroup label="Transportation Occupations:">
+                                    <option value="Aircraft Pilot or Flight Engineer">-  Aircraft Pilot or Flight Engineer</option>
+                                    <option value="Motor Vehicle Operator (e.g., Ambulance, Bus, Taxi, or Truck Driver)">-  Motor Vehicle Operator (e.g., Ambulance, Bus, Taxi, or Truck Driver)</option>
+                                    <option value="Other Transportation Occupation">-  Other Transportation Occupation</option>
+                                </optgroup>
+                                <optgroup label="Other Occupations:">
+                                    <option value="Military">-  Military</option>
+                                    <option value="Homemaker">-  Homemaker</option>
+                                    <option value="Other Occupation">-  Other Occupation</option>
+                                    <option value="Don't Know">-  Don't Know</option>
+                                    <option value="Not Applicable">-  Not Applicable</option>
+                                </optgroup>
+                            </select>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && occType.invalid">
+                        <span class="validation" *ngIf="occType.errors?.required">Select an Occupation</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="income" class="header">b) Source of Income<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <select name="income" id="income" [(ngModel)]="customer.income" #income="ngModel" required>
+                                <option value="" disabled>Select One</option>
+                                <option value="Business">Business</option>
+                                <option value="Salary">Salary</option>
+                                <option value="Pension">Pension</option>
+                                <option value="Rent">Rent</option>
+                            </select>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && income.invalid">
+                        <span class="validation" *ngIf="income.errors?.required">Field cannot be empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="salary" class="header">c) Gross Annual Income<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <input type="text" name="salary" [(ngModel)]="customer.salary" #salary = "ngModel" id="salary" placeholder="Enter Gross Annual Income" required>
+                        </td>
+                        <td></td>
+                        <span *ngIf="accountform.submitted && salary.invalid">
+                        <span class="validation" *ngIf="salary.errors?.required">Field cannot be empty</span>
+                        </span>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="atmcard">
+                <h3 class="header" style="margin:3% 0;">Debit/ATM Card</h3>
+                <table cellspacing = "20">
+                    <tr>
+                        <td><label for="atmcard">Do you want a Debit Card?<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <select name="atmcard" id="atmcard" [(ngModel)]="customer.atmcard" #atmcard = "ngModel" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                        <!-- <td></td> -->
+                        <span *ngIf="accountform.submitted && atmcard.invalid">
+                        <span class="validation" *ngIf="atmcard.errors?.required">Select an Option</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="accType" class="header">Account Type<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <select name="accType" id="accType" [(ngModel)] = "customer.accType" #accType = "ngModel" required>
+                                <option value="" disabled>Select One</option>
+                                <option value="Savings">Savings</option>
+                                <option value="Current">Current</option>
+                                <option value="Demat">Demat</option>
+                            </select>
+                        </td>
+                        <!-- <td></td> -->
+                        <span *ngIf="accountform.submitted && accType.invalid">
+                        <span class="validation" *ngIf="accType.errors?.required">Select an Option</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="branchName" class="header">Branch Name<span class="required-validation">*</span></label></td>
+                        <td class="field">
+                            <!-- <input type="text" name="branchName" [(ngModel)]="customer.branchName" id="branchName" #branchName = "ngModel" placeholder="Enter Branch Name" required> -->
+                            <select name="branchName" [(ngModel)]="customer.branchName" id="branchName" #branchName = "ngModel" required>
+                                <option *ngFor="let item of ifsc" value={{item.Branch_Name}}>{{item.Branch_Name}}</option>
+                            </select></td>
+                        <!-- <td></td> -->
+                        <span *ngIf="accountform.submitted && branchName.invalid">
+                        <span class="validation" *ngIf="branchName.errors?.required">Field cannot be empty</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td><label for="optNetBanking" class="header">Opt for Net Banking<span class="required-validation">*</span></label></td>
+                        <td>
+                            <select name="optNetBanking" id="optNetBanking" [(ngModel)]="customer.optNetBanking" #optNetBanking="ngModel" required>
+                                <option value="" disabled>Select One</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                        <!-- <td></td> -->
+                        <span *ngIf="accountform.submitted && optNetBanking.invalid">
+                        <span class="validation" *ngIf="optNetBanking.errors?.required">Select an Option</span>
+                        </span>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input style="margin-top:10%" type="checkbox" name="agreeTerms" id="agreeTerms" [(ngModel)]="customer.agreeTerms" #agreeTerms="ngModel" required><label class="header" for="agreeTerms" style="margin-left:3%;"> I Agree...</label>        
+                        </td>
+                        <td></td>
+                        <span class="validation" *ngIf="accountform.submitted && agreeTerms.invalid">Accept T&C is required</span>
+                        
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="submit-button">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+  <script src="../../../assets/external/date.js" charset="utf-8"></script>
+
+
+

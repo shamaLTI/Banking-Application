@@ -1,0 +1,29 @@
+
+   
+  
+  .error-img {
+    background-image: url("../../../assets/MicrosoftTeams-image.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  
+   
+  
+  .error-messages {
+    padding-left: 15rem;
+    padding-top: 14rem;
+    padding-bottom: 12rem;
+    margin-right: 12rem;
+  }
+  
+   
+  
+  .message-oops {
+    color: #ae275f;
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  
+   
+  
+ 

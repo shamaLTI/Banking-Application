@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+
+
+<a routerLink='/userinfo'><i class="fas fa-arrow-circle-left back-icon fa-2x"></i></a>
+  <div id="admin-login">
+    <div class="login-details">
+      <div class="row">
+        <div class="col-md-12">
+          <i class="fas fa-university center login-icon"> Add New Branch Details</i>
+          <hr class="my-4 horizontal">
+          <form name="form" #branchform="ngForm" (ngSubmit)="branchform.form.valid && InsertBranch(branchform)">
+            <div class="form-group">
+              <label for="branchname">Branch Name</label>
+              <!-- <input type="branchname" class="form-control" name="branchname" id="branchname" aria-describedby="branchnameHelp" [(ngModel)]="branchname.branchname" #branchname="ngModel" placeholder="Enter branchname" required autofocus> -->
+              <input type="text" #branchname="ngModel" name="branchname" class="form-control" [(ngModel)]="model.branchname" placeholder="Enter Branch Name" required>
+              <span *ngIf="branchform.submitted && branchname.invalid">
+                  <span style="color:red;" *ngIf="branchname.errors?.required">Field cannot be blank</span>
+              </span>
+
+            </div>
+            <div class="form-group">
+              <label for="IFSC_Code">IFSC Code</label>
+              <!-- <input type="IFSC_Code" class="form-control" name="IFSC_Code" id="IFSC_Code" [(ngModel)]="IFSC_Code" #IFSC_Code="ngModel" placeholder="IFSC_Code" required> -->
+              <input type="text" #IFSC_Code ="ngModel"name="IFSC_Code" class="form-control" [(ngModel)]="model.IFSC_Code" placeholder="Enter IFSC Code"  maxlength="11" required>
+              <span *ngIf="branchform.submitted && IFSC_Code.invalid">
+                  <span style="color:red;" *ngIf="IFSC_Code.errors?.required">Field cannot be blank</span>
+                </span> <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+            </form>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <div id="contactUs">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2 class="header2">Get in touch with us now!</h2>
+                  </div>
+                  <div class="col-md-6">
+                    <a href="https://twitter.com/lti_global?lang=en"><i class="fab social-icon fa-twitter fa-2x"></i></a>
+                    <a href="https://www.facebook.com/LarsenToubroInfotech/"><i class="fab social-icon fa-facebook-f fa-2x" style="color: darkblue;"></i></a>
+                    <a href="https://www.instagram.com/lti_global/?hl=en"><i class="fab social-icon fa-instagram fa-2x instagram"></i></a>
+                    <a href="mailto: Abhishek.Jain@lntinfotech.com"><i class="fas social-icon fa-envelope fa-2x" style="color:white;"></i></a>
+                    <a href="https://www.youtube.com/channel/UCr4-_QrHa_CCN872Cgi4D3Q"><i class="fab social-icon fa-youtube fa-2x" style="color:red;"></i></a>
+                    <a href="https://www.linkedin.com/company/l&t-infotech/?originalSubdomain=in"><i class="fab social-icon fa-linkedin-in fa-2x"></i></a>
+                    <p>© 2021 Fintech Group of Companies. Terms and Conditions applied.</p>
+                  </div>
+                </div>
+              </div>
+              

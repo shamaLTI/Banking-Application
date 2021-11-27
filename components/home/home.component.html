@@ -1,0 +1,171 @@
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to FinTech | All Your banking needs in one App.</title>
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  
+  <body>
+    <header id="header">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" id="navigation-brand" routerLink="/home">FinTech</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/FAQ">FAQ's</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/aboutus">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.larsentoubro.com/">Our Partners</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/contact">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+
+<div id="slideshow">
+    <div id="carouselSlideshow" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100 carouselImage" src="../../../assets/wm1.jpg" alt="First slide">
+          <h4 class="bottom">All your Banking needs at one place</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="message">
+    <ul class="messageList" style="padding-left:0">
+      <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+        &bull; Beware of fake Income Tax Refund messages containing suspicious links. Please Do not click on suspicious links and never share your personal details. Fake messages or links might resemble to, sent by Income Tax Department or Bank. These are fake / phishing messages. Bank does not send any link asking for personal information / card details.
+        <span style="margin-left:1in;"></span>
+        &bull; Prevent Unauthorized Transactions in your demat account --> Update your Mobile Number with your Depository Participant. Receive alerts on your Registered Mobile for all debit and other important transactions in your demat account directly from CDSL on the same day......................issued in the interest of investors.
+        <span style="margin-left:1in;"></span>
+        &bull; KYC is one time exercise while dealing in securities markets - once KYC is done through a SEBI registered intermediary (broker, DP, Mutual Fund etc.), you need not undergo the same process again when you approach another intermediary.
+        <span style="margin-left:1in;"></span>
+        &bull; No need to issue cheques by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment. No worries for refund as the money remains in investor's account.
+        <span style="margin-left:1in;"></span>
+        &bull; BEWARE OF FRAUDS BEING PERPETRATED IN THE NAME OF CORONA VACCINE. DO NOT SHARE ACCOUNT INFORMATION WITH ANYONE OVER PHONE OR MAIL.
+      </marquee>
+    </ul>
+  </div>
+
+  <div id="mainFunctions">
+    <h2 style="font-size:2.5rem; text-align:center; margin-top:1%;">What we offer</h2>
+    <hr class="horizontal">
+    <br>
+    <div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header bg-dark text-white">
+            <h4 class="my-0 font-weight-normal">User Application</h4>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title pricing-card-title text-muted">Open Account</h2>
+            <br>
+            <!-- <button type="button"  class="btn btn-lg btn-block btn-dark" >Open New Account</button> -->
+            <a  routerLink="/openaccount"><button type="button"  class="btn btn-lg btn-block btn-dark" >Open New Account</button></a>
+            <br>
+            <a  routerLink="/track"><button type="button" class="btn btn-lg btn-block btn-dark">Track Application Status</button></a>
+            <br>
+            <a routerLink="/contact" > <span class="text-muted">Contact Customer Support</span></a>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header bg-dark text-white">
+            <h4 class="my-0 font-weight-normal">Personal</h4>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title pricing-card-title text-muted">Internet Banking</h2>
+            <br>
+            <a routerLink="/resetbyaccount">
+            <button type="button" class="btn btn-lg btn-block btn-dark">Register for Online Banking</button></a>
+            <br>
+            <a routerLink="/login"><button type="button" class="btn btn-lg btn-block btn-dark" >User Login</button></a>
+            <br>
+            <p><strong style="color:red;">Note: Please contact your Branch Manager for any Login related issues.</strong></p>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header bg-dark text-white">
+            <h4 class="my-0 font-weight-normal">Admin</h4>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title pricing-card-title text-muted">Corporate</h2>
+            <br>
+            <!-- <button type="button" class="btn btn-lg btn-block btn-dark">Admin Login</button> -->
+            <a  routerLink="/adminlogin"><button type="button"  class="btn btn-lg btn-block btn-dark" >Admin Login</button></a>
+
+            <br>
+            <p><strong style="color:red;">Note: For office staff use only.</strong></p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div id="customerSlide">
+    <img class="customerSlide" src="../../../assets/customer-care.jpg" alt="customer-care">
+    <h1 class="center">We are here for you 24*7</h1>
+    <h3 class="left-center">Bank online safely and securely from the comfort of your home.</h3>
+    <button type="button" class="btn btn-lg btn-danger left-bottom"(click)="openScrollableContent(content)">Learn More</button>
+  </div>
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h3 class="modal-title" >We're enhancing your personal Internet Banking Experience!</h3>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" >
+      <p>Your personal Internet Banking experience with FinTech Bank is evolving for the better future. Our new design makes it easier for you to manage your accounts and finances online with FinTech Bank.</p>
+      <h3>What's changing?</h3>
+      <ul>
+        <li>A simplified new design, based around you and your Banking needs!</li>
+        <li>Mobile and tablet friendly screens, allowing you to use Personal Internet Banking wherever you are.</li>
+        <li>Our new Internet Banking Homepage will show your refined account details with new look, allowing you to have a great experience.</li>
+        <li>Our new move, Money Feature will start to replace the traditional transfer options, making it simpler for you to move money between accounts and set up payments.</li>
+        <li>Our new Logon journey will be replacing the current one making it simpler and faster, whilst being just as secure as it has always been.</li>
+      </ul>
+      <h3>Need Help?</h3>
+      <ul>
+        <li>Visit our Contact page to speak to us over the phone for any enquiry.</li>
+      </ul>
+      <h3>What do you need to do?</h3>
+      <p>FinTech Bank's Internet Banking is quick, easy and secure, allowing you access to wide range of transactions such as utility Fund Transfer to your accounts in India, viewing E-Statements etc. mentioned below are the features and benefits of FinTech Bank's Internet Banking services.</p>
+      <ul>
+        <li>Complete control over Accounts.</li>
+        <li>View your Bank Account/ mini statements and transactions at your convenience.</li>
+        <li>Transfer Funds online to accounts with FinTech Bank and other banks in India.</li>
+        <li>Say goodbye to queues and missed dates, manage your account at the tip of finger.</li>
+      </ul>
+      <p>At FinTech Bank, we endeavour to ensure a secure environment for your Personal Internet Banking experience. A wide range of services are available to you through FinTech Bank's Internet Banking. Most of these services would be level of authentication using a secure device.
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+<app-footer></app-footer>

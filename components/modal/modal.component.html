@@ -1,0 +1,118 @@
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  
+  <ng-template #longContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <table class="table table-striped table-hover">
+            <tbody>
+              <tr>
+                <th scope="col">Account Number</th>
+                <td scope="row">{{Acc_No}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Reference ID</th>
+                <td scope="row">{{Ref_ID}}</td>
+              </tr>
+              <tr>
+                <th scope="col">First Name</th>
+                <td scope="row">{{Fname}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Last Name</th>
+                <td scope="row">{{Lname}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Father's Name</th>
+                <td scope="row">{{Mname}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Mobile Number</th>
+                <td scope="row">{{MobNo}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Email Address</th>
+                <td scope="row">{{Email}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Aadhar Number</th>
+                <td scope="row">{{Aadhar_No}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Date of Birth</th>
+                <td scope="row">{{DOB}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Address</th>
+                <td scope="row">{{P_Address1}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Landmark</th>
+                <td scope="row">{{P_Landmark}}</td>
+              </tr>
+              <tr>
+                <th scope="col">State</th>
+                <td scope="row">{{P_State}}</td>
+              </tr>
+              <tr>
+                <th scope="col">City</th>
+                <td scope="row">{{P_City}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Pincode</th>
+                <td scope="row">{{P_Pincode}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Occupation</th>
+                <td scope="row">{{OccupationType}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Income Source</th>
+                <td scope="row">{{Src_Income}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Gross Annual Income</th>
+                <td scope="row">{{GrossAnnual_Income}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Debit Card</th>
+                <td scope="row">{{DebitCard}}</td>
+              </tr>
+              <tr>
+                <th scope="col">NetBanking</th>
+                <td scope="row">{{NetBanking}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Account Type</th>
+                <td scope="row">{{AccountType}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Branch Name</th>
+                <td scope="row">{{Branch_Name}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+

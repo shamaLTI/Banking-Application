@@ -1,0 +1,93 @@
+
+<app-header></app-header>
+
+
+<div id="admin-login">
+  <div class="login-details">
+    <div class="row">
+      <div class="col-md-12">
+        <i class="fas fa-lock center login-icon"> User Login</i>
+        <hr class="my-4 horizontal">
+        <form #loginform="ngForm" name="form"(ngSubmit)=" loginform.form.valid && RegisterData(loginform)" onsubmit="validateCaptcha()">   
+           <div class="form-group">
+            <label for="userid">User ID</label>
+            <!-- <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" [(ngModel)]="email.email" #email="ngModel" placeholder="Enter email" required autofocus> -->
+            <input type="text" name="userid" class="form-control" id="userid" [(ngModel)]="model.userid" #userid="ngModel" placeholder="Enter User ID" required>
+            <span *ngIf="loginform.submitted && userid.invalid">
+              <span style="color:red;" *ngIf="userid.errors?.required">Field cannot be blank</span>
+            </span>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your User ID with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <!-- <input type="password" class="form-control" name="password" id="password" [(ngModel)]="password" #password="ngModel" placeholder="Password" required> -->
+            <input type="password" name="password" id="password" class="form-control" [(ngModel)]="model.password" #password="ngModel" placeholder="Enter Password" required>
+            <span *ngIf="loginform.submitted && password.invalid">
+              <span style="color:red;" *ngIf="password.errors?.required">Field cannot be blank</span>
+            </span>
+          </div><br>
+          
+          
+         
+      
+     
+          <div class ="button">
+          <button onclick="validcap()" type="submit" class="btn btn-primary">Login</button><br><br>
+          <!-- <div> <a routerLink="/resetbyaccount"> First Time User? Register Here</a></div><br> -->
+          <div> <a routerLink="/resetbyaccount"> Forgot Password</a></div><br>
+          <div> <a routerLink="/resetpassword" class="link-primary"> Forgot User ID</a></div><br>
+        </div>
+
+        </form>  
+        
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+<app-footer></app-footer>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+  <script src="../../../assets/external/captcha.js" charset="utf-8"></script>
+
+
+
+<!-- <form #loginform="ngForm" name="loginform" (ngSubmit)="RegisterData(loginform)">
+    <table cellpadding="3px">
+        <tr>
+            <td colspan="3" class="head">Login to your Account</td>
+        </tr>
+        <br>
+
+        <div>
+            <label>Enter UserName : </label>
+            <input type="text" name="name" [(ngModel)]="model.name"
+            #name="ngModel" required/>
+            <span *ngIf="name.errors?.required">Name has to be entered</span>
+            <br>
+        </div>
+    
+        <div>
+            <label>Enter Password : </label>   
+            <input type="password" name="pwd" [(ngModel)]="model.pwd"
+            #pwd="ngModel" required/>
+            <span *ngIf="pwd.errors?.required">Password has to be entered</span>
+        
+        </div>
+        <tr>
+            <td colspan="3"><button type="submit">Login</button></td>
+        </tr>
+        <br>
+        <tr>
+            <td colspan="3"><a href="">First Time User? Register</a></td>
+        </tr>
+        <tr>
+            <td colspan="3"><a href="">Forgot User ID?</a></td>
+        </tr>
+        <tr>
+            <td colspan="3"><a href="">Forgot Password?</a></td>
+        </tr>
+    </table>
+</form> -->

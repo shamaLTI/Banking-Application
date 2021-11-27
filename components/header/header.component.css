@@ -1,0 +1,39 @@
+ #header {
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: linear-gradient(to bottom,#6e2945 100%, transparent);
+    z-index: 1000;
+    padding: 0 10%;
+  }
+  
+  #navigation-brand {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bolder;
+  }
+  
+ 
+  .navbar-brand:hover {
+    color: #fff!important;
+  }
+  
+  .nav-link {
+    color: #fff!important;
+    margin-right: 1rem!important;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+  
+  .nav-link:hover {
+    color: #fff!important;
+  }
+  
+  /* Header 2 Class */
+  .header2 {
+    margin-top: 4%;
+    text-align: center;
+  } 
+
+
+

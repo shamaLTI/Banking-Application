@@ -1,0 +1,97 @@
+/* Navigation Bar Section */
+#header {
+    left: 0;
+    right: 0;
+    position: absolute;
+    /* background: linear-gradient(to bottom,#1a195d 20%, transparent); */
+    z-index: 1000;
+    padding: 0 10%;
+  }
+  
+  #navigation-brand {
+    font-size: 2.5rem;
+    color: grey;
+    font-weight: bolder;
+  }
+  
+  .navbar-brand:hover {
+    color: red!important;
+  }
+  
+  .nav-link {
+    color: grey!important;
+    margin-right: 1rem!important;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+  
+  .nav-link:hover {
+    color: red!important;
+  }
+  
+  /* Header 2 Class */
+  .header2 {
+    margin-top: 4%;
+    text-align: center;
+  }
+  
+  /* Slide Show Section */
+  .carouselImage {
+    position: relative;
+  }
+  
+  .bottom-center {
+    position: absolute;
+    top: 200px;
+    left: 900px;
+    color: grey;
+    font-size: 2rem;
+  }
+  
+  .bottom {
+    position: absolute;
+    top: 250px;
+    left: 900px;
+    color: grey;
+    font-size: 2rem;
+  }
+  
+  /* Contact page section */
+  .contact-number {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .contact-icon {
+    position: relative;
+  }
+  
+  .toll-free-number {
+    float: right;
+    margin-right: 65%;
+  }
+  
+  /* Contact Us Section */
+  #contactUs {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 2% 10% 1%;
+    font-size: 1rem;
+  }
+  
+  .social-icon {
+    margin: 2%;
+  }
+  
+  .instagram {
+    display: inline-block;
+    text-align: center;
+    border-radius: 40px;
+    color: #fff;
+    vertical-align: middle;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+    margin-bottom: 4.5%;
+  }

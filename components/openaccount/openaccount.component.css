@@ -1,0 +1,54 @@
+
+.form
+{
+    margin-left: 20%;
+    margin-top:5%;
+
+}
+
+.details {
+    margin:3% 0;
+    width: 100%;
+}
+
+.field
+{
+    width: 30rem;
+}
+
+input[type=text], input[type=date], input[type=email], select
+{
+    margin-left: 20%!important;
+    width: 70%;
+    padding: 8px 8px;
+}
+
+.validation
+{
+    color: #ff4646;
+    text-align: left
+}
+
+.form-section {
+    padding: 7% 0;
+    margin-left: 12%;
+}
+
+.header {
+    color: #6e2945;
+}
+
+.submit-button {
+    text-align: center;
+    margin-right:50%;
+    margin-top:2%;
+}
+
+button{
+    background-color: #6e2945;
+    border:none;
+}
+
+.required-validation {
+    color: red;
+}
